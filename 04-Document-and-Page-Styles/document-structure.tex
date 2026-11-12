@@ -1,97 +1,171 @@
 \documentclass[12pt,a4paper]{article}
+
+% Packages
 \usepackage[margin=25mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
 \title{\textbf{Building the Structure of a LaTeX Document}}
 \author{LaTeX Learning Module}
 \date{\today}
+
 \begin{document}
+
 \maketitle
+
 \begin{abstract}
-This example introduces the basic parts of a LaTeX document. It demonstrates how to choose a document class, set common options, create a title, write an abstract, and organize information with section headings.
+This example introduces the basic parts of a LaTeX document. It demonstrates
+how to choose a document class, set common options, create a title, write an
+abstract, and organize information with section headings.
 \end{abstract}
+
 \tableofcontents
 \newpage
+
 \section{Understanding the Document Class}
-Every LaTeX document begins by selecting a document class. The class determines the general structure and formatting rules used by the document.
+
+Every LaTeX document begins by selecting a document class. The class determines
+the general structure and formatting rules used by the document.
+
 \begin{itemize}
-\item \texttt{article} is useful for short documents, assignments, and reports that do not need chapters.
-\item \texttt{report} is suitable for longer work that can be divided into chapters.
-\item \texttt{book} is designed for book-length projects with front matter and chapters.
+    \item \texttt{article} is useful for short documents, assignments, and reports
+    that do not need chapters.
+    \item \texttt{report} is suitable for longer work that can be divided into
+    chapters.
+    \item \texttt{book} is designed for book-length projects with front matter
+    and chapters.
 \end{itemize}
+
 The class is selected with the \verb|\documentclass| command:
+
 \begin{verbatim}
 \documentclass[12pt,a4paper]{article}
 \end{verbatim}
-The options in square brackets set the main font size and paper format. Common font-size choices include \texttt{10pt}, \texttt{11pt}, and \texttt{12pt}. A document can also use paper options such as \texttt{a4paper} or \texttt{letterpaper}.
+
+The options in square brackets set the main font size and paper format.
+Common font-size choices include \texttt{10pt}, \texttt{11pt}, and
+\texttt{12pt}. A document can also use paper options such as \texttt{a4paper}
+or \texttt{letterpaper}.
+
 \section{The Preamble and Document Body}
-A LaTeX source file has two main parts. The preamble appears before \verb|\begin{document}| and contains the document class, package imports, and settings. The body begins after \verb|\begin{document}| and contains the material that will appear in the finished document.
+
+A LaTeX source file has two main parts. The preamble appears before
+\verb|\begin{document}| and contains the document class, package imports,
+and settings. The body begins after \verb|\begin{document}| and contains
+the material that will appear in the finished document.
+
 \begin{verbatim}
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=25mm]{geometry}
+
 \begin{document}
 Your document content goes here.
 \end{document}
 \end{verbatim}
-Commands that load packages or define document-wide settings normally belong in the preamble.
+
+Commands that load packages or define document-wide settings normally belong
+in the preamble.
+
 \section{Adding a Title and Author Details}
-The commands \verb|\title|, \verb|\author|, and \verb|\date| store the information that appears in the title area. The command \verb|\maketitle| prints that information.
+
+The commands \verb|\title|, \verb|\author|, and \verb|\date| store the
+information that appears in the title area. The command \verb|\maketitle|
+prints that information.
+
 \begin{verbatim}
 \title{A Short Research Report}
 \author{Jordan Lee}
 \date{November 2026}
 \maketitle
 \end{verbatim}
-If the date field is left empty, use \verb|\date{}| to omit it. The appearance of the title area depends partly on the selected document class.
+
+If the date field is left empty, use \verb|\date{}| to omit it. The appearance
+of the title area depends partly on the selected document class.
+
 \section{Writing an Abstract}
-An abstract gives readers a brief overview of the document. In the \texttt{article} class, it is usually created with the \texttt{abstract} environment.
+
+An abstract gives readers a brief overview of the document. In the
+\texttt{article} class, it is usually created with the \texttt{abstract}
+environment.
+
 \begin{verbatim}
 \begin{abstract}
 This paper describes the purpose, approach, and main
 points of the work in a concise form.
 \end{abstract}
 \end{verbatim}
-Keep the abstract focused on the subject and the main information readers should know before reading the full document.
+
+Keep the abstract focused on the subject and the main information readers
+should know before reading the full document.
+
 \section{Organizing Content with Headings}
-LaTeX provides commands for arranging material into a clear hierarchy. For an article, common levels include:
+
+LaTeX provides commands for arranging material into a clear hierarchy.
+For an article, common levels include:
+
 \begin{itemize}
-\item \verb|\section{...}| for a main topic
-\item \verb|\subsection{...}| for a part of that topic
-\item \verb|\subsubsection{...}| for a more detailed point
+    \item \verb|\section{...}| for a main topic
+    \item \verb|\subsection{...}| for a part of that topic
+    \item \verb|\subsubsection{...}| for a more detailed point
 \end{itemize}
+
 For example:
+
 \begin{verbatim}
 \section{Methods}
 \subsection{Materials}
 \subsubsection{Equipment}
 \end{verbatim}
-The available heading levels depend on the document class. The \texttt{report} and \texttt{book} classes also support chapters.
+
+The available heading levels depend on the document class. The
+\texttt{report} and \texttt{book} classes also support chapters.
+
 \section{A Complete Starter Example}
+
 The following short source brings the main ideas together:
+
 \begin{verbatim}
 \documentclass[12pt,a4paper]{article}
 \usepackage[margin=25mm]{geometry}
+
 \title{My First Structured Document}
 \author{Jordan Lee}
 \date{\today}
+
 \begin{document}
 \maketitle
+
 \begin{abstract}
 A short summary of the document goes here.
 \end{abstract}
+
 \section{Introduction}
 Introduce the subject.
+
 \section{Main Discussion}
 Explain the important points.
+
 \subsection{A Supporting Detail}
 Add a more focused explanation.
+
 \section{Conclusion}
 Summarize the main message.
 \end{document}
 \end{verbatim}
+
 \section{Key Points}
-A well-organized LaTeX file starts with a suitable class, places setup commands in the preamble, and keeps the actual content inside the document body. Titles, abstracts, and heading commands help readers navigate the finished work.
+
+A well-organized LaTeX file starts with a suitable class, places setup commands
+in the preamble, and keeps the actual content inside the document body.
+Titles, abstracts, and heading commands help readers navigate the finished
+work.
+
 \end{document}
