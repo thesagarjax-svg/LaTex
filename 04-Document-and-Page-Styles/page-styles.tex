@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{sectsty}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textit{LaTeX Learning Module}}
+\rhead{\textit{Page Formatting}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\sectionfont{\color{blue}}
+\subsectionfont{\color{teal}}
+\setlist[itemize]{itemsep=3pt,topsep=5pt}
+\title{\textbf{Page Layout and Document Styling}}
+\author{LaTeX Learning Module}
+\date{\today}
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\section{Choosing a Page Style}
+The \verb|\pagestyle| command controls the header and footer style used on pages throughout a document. LaTeX includes several built-in choices:
+\begin{itemize}
+\item \texttt{plain} places the page number at the bottom of the page.
+\item \texttt{empty} removes the standard header and footer.
+\item \texttt{headings} displays running headings and page numbers.
+\end{itemize}
+Use \verb|\thispagestyle{empty}| when a change should affect only the current page. Use \verb|\pagestyle{empty}| when it should apply to the whole document.
+\section{Setting Margins with geometry}
+The \texttt{geometry} package makes it straightforward to set page dimensions. For example:
+\begin{verbatim}
+\usepackage[a4paper,margin=25mm]{geometry}
+\end{verbatim}
+You can also set each edge separately:
+\begin{verbatim}
+\usepackage[
+  top=25mm,
+  bottom=25mm,
+  left=30mm,
+  right=20mm
+]{geometry}
+\end{verbatim}
+Choose margins that leave enough room for the text and any printed or binding requirements.
+\section{Creating Headers and Footers}
+The \texttt{fancyhdr} package allows different information to appear in the left, center, and right areas of the header and footer.
+\begin{verbatim}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Course Notes}
+\rhead{Page Layout}
+\cfoot{\thepage}
+\end{verbatim}
+The commands \verb|\lhead|, \verb|\chead|, and \verb|\rhead| set the header areas. Their footer equivalents are \verb|\lfoot|, \verb|\cfoot|, and \verb|\rfoot|. The command \verb|\fancyhf{}| clears existing header and footer fields before new ones are assigned.
+\section{Paragraph Indentation and Spacing}
+LaTeX indents the first line of many paragraphs by default. Set the indentation length in the preamble with \verb|\parindent|:
+\begin{verbatim}
+\setlength{\parindent}{0pt}
+\end{verbatim}
+The distance between paragraphs can be adjusted with \verb|\parskip|:
+\begin{verbatim}
+\setlength{\parskip}{6pt}
+\end{verbatim}
+Use these settings consistently. Large paragraph gaps combined with first-line indentation may make a page look uneven.
+\section{Line Spacing}
+The \texttt{setspace} package provides convenient commands for changing line spacing:
+\begin{verbatim}
+\usepackage{setspace}
+\singlespacing
+\onehalfspacing
+\doublespacing
+\end{verbatim}
+You can apply a spacing choice to the whole document or use the \texttt{spacing} environment for a selected portion:
+\begin{verbatim}
+\begin{spacing}{1.25}
+This paragraph uses one-and-a-quarter spacing.
+\end{spacing}
+\end{verbatim}
+\onehalfspacing
+This paragraph is included as a visual example of the wider line spacing enabled by \verb|\onehalfspacing|. It can be useful for drafts that need room for comments or review.
+\singlespacing
+\section{Horizontal and Vertical Space}
+Use \verb|\hspace| to add horizontal space and \verb|\vspace| to add vertical space.
+\begin{verbatim}
+Text\hspace{8mm}More text
+\vspace{5mm}
+A new line after some vertical space.
+\end{verbatim}
+Manual spacing is useful for small adjustments, but avoid using it as the main method for arranging an entire page. LaTeX's layout tools usually produce more reliable results.
+\section{Page Breaks}
+The commands \verb|\newpage| and \verb|\pagebreak| both request a new page. They differ in how strongly they encourage the break:
+\begin{itemize}
+\item \verb|\newpage| ends the current page immediately.
+\item \verb|\pagebreak| suggests a page break and can take an optional strength value from 0 to 4.
+\end{itemize}
+For example, \verb|\pagebreak[3]| requests a strong break without making it quite as absolute as \verb|\newpage|.
+\section{Customizing Headings, Colors, and Lists}
+The \texttt{sectsty} package can change the appearance of section headings. For example:
+\begin{verbatim}
+\usepackage{sectsty}
+\sectionfont{\color{blue}}
+\subsectionfont{\color{teal}}
+\end{verbatim}
+The \texttt{xcolor} package provides named colors and lets you define your own. The \verb|\pagecolor| command changes the background color of a page:
+\begin{verbatim}
+\usepackage{xcolor}
+\pagecolor{yellow!8}
+\end{verbatim}
+Use a light background when the document is intended for reading or printing. To return to the normal background, use \verb|\pagecolor{white}|.
+The \texttt{enumitem} package gives more control over lists. For example:
+\begin{verbatim}
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=4pt,leftmargin=18mm}
+\end{verbatim}
+You can also change the settings for one list without changing every list in the document:
+\begin{verbatim}
+\begin{itemize}[itemsep=6pt]
+  \item First point
+  \item Second point
+\end{itemize}
+\end{verbatim}
+\section{Keeping Text Together with mbox}
+The \verb|\mbox| command keeps its contents on one line, preventing LaTeX from breaking the text at spaces inside the box.
+\begin{verbatim}
+The product code is \mbox{AB 2048 Z}.
+\end{verbatim}
+If the complete box cannot fit on the line, it may extend into the margin. Use this command only for short content that should remain together.
+\section{Avoiding Page Splits with samepage}
+The \texttt{samepage} environment asks LaTeX to keep a group of material on one page rather than splitting it across a page boundary.
+\begin{verbatim}
+\begin{samepage}
+A short heading
+A paragraph that should stay with the heading.
+\end{samepage}
+\end{verbatim}
+This is useful for compact groups of related content. It does not guarantee that an oversized block will fit on a page.
+\section{Creating Text Blocks with parbox}
+The \verb|\parbox| command places paragraph text inside a box with a chosen width. LaTeX wraps the text to fit that width.
+\begin{verbatim}
+\parbox{0.7\textwidth}{
+  This text is placed inside a box that uses
+  seventy percent of the current text width.
+}
+\end{verbatim}
+A \verb|\parbox| can be useful for short notes, side-by-side text areas, or small formatted blocks.
+\section{Adjusting Vertical Position with raisebox}
+The \verb|\raisebox| command moves content up or down relative to the surrounding text baseline.
+\begin{verbatim}
+Normal text \raisebox{2pt}{raised text}
+and \raisebox{-2pt}{lowered text}.
+\end{verbatim}
+Positive values raise the content; negative values lower it. Small adjustments are usually easiest to read.
+\section{Manual Line Breaks}
+Use \verb|\\| to end a line where a line break is appropriate, such as in an address or a short title block. The \verb|\newline| command can also create a line break.
+\begin{verbatim}
+North Street 12\\
+Central District\\
+Example City
+\end{verbatim}
+For ordinary paragraphs, leave a blank line in the source to start a new paragraph instead of inserting repeated manual line breaks.
+\section{Key Points}
+Page styles control running information, while page-layout settings determine the space available for content. Packages such as \texttt{fancyhdr}, \texttt{sectsty}, and \texttt{enumitem} provide additional control over the document's appearance. Text-positioning commands are best used selectively, so the layout remains clear and consistent.
+\end{document}
