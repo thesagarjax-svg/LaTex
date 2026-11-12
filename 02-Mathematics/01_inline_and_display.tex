@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Inline and Display Mathematics}
+\author{ }
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. What is mathematical mode?}
+LaTeX uses a special mode for writing mathematical expressions. There are two common ways to enter it: inline maths and display maths.
+
+\section*{2. Inline mathematics}
+Inline maths appears inside a sentence.
+
+\textbf{LaTeX source code:}
+\begin{verbatim}
+The equation $a+b=c$ is an example.
+\end{verbatim}
+
+\textbf{Expected compiled output:}
+
+The equation \(a+b=c\) is an example.
+
+\textbf{Explanation:}
+The dollar signs \verb|$...$| mark the beginning and end of inline maths. The equation stays on the same line as the sentence.
+
+\section*{3. Display mathematics}
+Display maths places an expression on its own line.
+
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\[
+a+b=c
+\]
+\end{verbatim}
+
+\textbf{Expected compiled output:}
+\[
+a+b=c
+\]
+
+\textbf{Explanation:}
+The commands \verb|\[| and \verb|\]| begin and end an unnumbered display equation.
+
+\section*{4. Practice}
+Write \(x+y=z\) once inside a sentence and once on a separate line.
+\end{document}

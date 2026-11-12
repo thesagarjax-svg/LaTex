@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Matrices}
+\author{ }
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. What is a matrix?}
+A matrix is a rectangular arrangement of numbers or other mathematical entries in rows and columns.
+
+\section*{2. A two-by-two matrix}
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\]
+\end{verbatim}
+\textbf{Expected compiled output:}
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\]
+
+\textbf{Explanation:}
+\begin{itemize}
+\item \verb|bmatrix| creates a matrix surrounded by square brackets.
+\item \verb|&| separates entries in the same row (columns).
+\item \verb|\\| starts a new row.
+\item The \verb|amsmath| package provides the \verb|bmatrix| environment.
+\end{itemize}
+
+\section*{3. Practice}
+Create a matrix with two rows and three columns containing the numbers 1 to 6.
+\end{document}

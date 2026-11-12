@@ -1,0 +1,52 @@
+\documentclass{article}
+\title{Brackets and Grouping}
+\author{ }
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Basic brackets}
+You can type ordinary round and square brackets directly.
+
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\[
+(a+b) \qquad [x+y]
+\]
+\end{verbatim}
+\textbf{Expected compiled output:}
+\[
+(a+b) \qquad [x+y]
+\]
+
+\section*{2. Automatically sized brackets}
+Large expressions may need larger brackets.
+
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\[
+\left(\frac{a}{b}\right)
+\]
+\end{verbatim}
+\textbf{Expected compiled output:}
+\[
+\left(\frac{a}{b}\right)
+\]
+\textbf{Explanation:} \verb|\left| and \verb|\right| make brackets grow to fit the expression between them. They must be used as a matching pair.
+
+\section*{3. Other bracket types}
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\[
+\left[\frac{x+1}{x-1}\right]
+\]
+\end{verbatim}
+\textbf{Expected compiled output:}
+\[
+\left[\frac{x+1}{x-1}\right]
+\]
+
+\section*{4. Practice}
+Put large round brackets around a fraction and large square brackets around a sum.
+\end{document}

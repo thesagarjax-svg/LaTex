@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Equations and Alignment}
+\author{ }
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Writing an equation}
+A displayed equation can be written between \verb|\[| and \verb|\]|.
+
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\[
+x+2=5
+\]
+\end{verbatim}
+\textbf{Expected compiled output:}
+\[
+x+2=5
+\]
+
+\section*{2. Aligning multiple steps}
+The \verb|align*| environment places several lines of maths in columns.
+
+\textbf{LaTeX source code:}
+\begin{verbatim}
+\begin{align*}
+x + 2 &= 5 \\
+x &= 5 - 2 \\
+x &= 3
+\end{align*}
+\end{verbatim}
+\textbf{Expected compiled output:}
+\[
+\begin{aligned}
+x + 2 &= 5 \\
+x &= 5 - 2 \\
+x &= 3
+\end{aligned}
+\]
+
+\textbf{Explanation:}
+\begin{itemize}
+\item \verb|align*| starts an unnumbered alignment environment.
+\item \verb|&| marks the point where columns should line up.
+\item \verb|\\| ends a row and starts the next one.
+\item The \verb|amsmath| package is required for \verb|align*|.
+\end{itemize}
+
+\section*{3. Practice}
+Show the steps for solving \(y+4=9\), aligning each equals sign.
+\end{document}
