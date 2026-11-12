@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\title{Mathematics in LaTeX: Beginner's Guide}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\bigskip
+
+\section{Inline and Display Mathematics}
+\textbf{Definition.} LaTeX has two common ways to write mathematical expressions. Inline mathematics sits within a sentence. Display mathematics appears separately, usually centered on its own line.
+
+\textbf{Example 1: Inline mathematics}
+\begin{verbatim}
+The equation $a+b=c$ is an example.
+\end{verbatim}
+\textbf{Expected result:} The equation $a+b=c$ is an example.
+
+\textbf{Example 2: Display mathematics}
+\begin{verbatim}
+\[
+a+b=c
+\]
+\end{verbatim}
+\textbf{Expected result:}
+\[
+a+b=c
+\]
+\textbf{Commands.} Dollar signs \verb|$...$| mark inline maths. The commands \verb|\[| and \verb|\]| begin and end an unnumbered display equation.
+
+\textbf{Practice.} Write $x+y=z$ inside a sentence and then on its own line.
+
+\section{Superscripts and Subscripts}
+\textbf{Definition.} A superscript is placed above a symbol, often to show a power. A subscript is placed below a symbol, often to label it.
+\textbf{Source code:}
+\begin{verbatim}
+\[ x^2 \qquad a_1 \qquad x_1^2 \]
+\[ x^{10} \qquad a_{12} \]
+\end{verbatim}
+\textbf{Expected result:}
+\[ x^2 \qquad a_1 \qquad x_1^2 \]
+\[ x^{10} \qquad a_{12} \]
+\textbf{Commands.} The caret \verb|^| creates a superscript; the underscore \verb|_| creates a subscript. Use braces to group more than one character, as in \verb|x^{10}|.
+\textbf{Practice.} Write $y^3$, $b_2$, and $m_{15}$.
+
+\section{Fractions and Roots}
+\textbf{Definition.} A fraction has a numerator (top part) and denominator (bottom part). A root shows a value that, when raised to a power, gives the original number.
+\textbf{Source code:}
+\begin{verbatim}
+\[ \frac{a}{b} \qquad \sqrt{x} \qquad \sqrt[3]{x} \]
+\end{verbatim}
+\textbf{Expected result:}
+\[ \frac{a}{b} \qquad \sqrt{x} \qquad \sqrt[3]{x} \]
+\textbf{Commands.} \verb|\frac{a}{b}| creates a fraction. \verb|\sqrt{x}| creates a square root. The optional index in \verb|\sqrt[3]{x}| makes a cube root.
+\textbf{Practice.} Write one-half, the square root of $a+b$, and the fourth root of $x$.
+
+\section{Greek Letters}
+\textbf{Definition.} Greek letters are commonly used for mathematical quantities, angles, and constants.
+\textbf{Source code:}
+\begin{verbatim}
+\[ \alpha,\ \beta,\ \gamma,\ \delta \]
+\[ \pi,\ \theta,\ \lambda,\ \omega \]
+\end{verbatim}
+\textbf{Expected result:}
+\[ \alpha,\ \beta,\ \gamma,\ \delta \]
+\[ \pi,\ \theta,\ \lambda,\ \omega \]
+\textbf{Commands.} A backslash followed by a letter name produces the symbol: \verb|\alpha| gives $\alpha$, and \verb|\theta| gives $\theta$. The command \verb|\pi| gives $\pi$.
+\textbf{Practice.} Find and write the commands for $\mu$, $\sigma$, $\phi$, and $\Delta$.
+
+\section{Mathematical Operators}
+\textbf{Definition.} Operators represent mathematical actions. Summation adds terms, product multiplies terms, and a limit describes a value an expression approaches.
+\textbf{Source code:}
+\begin{verbatim}
+\[ \sum_{i=1}^{n} i \]
+\[ \prod_{i=1}^{n} i \]
+\[ \lim_{x \to 0} f(x) \]
+\end{verbatim}
+\textbf{Expected result:}
+\[ \sum_{i=1}^{n} i \]
+\[ \prod_{i=1}^{n} i \]
+\[ \lim_{x \to 0} f(x) \]
+\textbf{Commands.} \verb|\sum| makes a summation sign, \verb|\prod| makes a product sign, and \verb|\lim| makes a limit operator. Underscores and carets set the lower and upper limits.
+\textbf{Practice.} Write a summation from $i=1$ to $5$ and a limit as $x$ approaches $2$.
+
+\section{Brackets and Grouping}
+\textbf{Definition.} Brackets group parts of an expression. LaTeX can also resize brackets to fit tall expressions such as fractions.
+\textbf{Source code:}
+\begin{verbatim}
+\[ (a+b) \qquad [x+y] \]
+\[ \left(\frac{a}{b}\right) \]
+\[ \left[\frac{x+1}{x-1}\right] \]
+\end{verbatim}
+\textbf{Expected result:}
+\[ (a+b) \qquad [x+y] \]
+\[ \left(\frac{a}{b}\right) \]
+\[ \left[\frac{x+1}{x-1}\right] \]
+\textbf{Commands.} Type ordinary parentheses and square brackets directly. Pair \verb|\left| with \verb|\right| to resize matching delimiters around an expression.
+\textbf{Practice.} Put large round brackets around a fraction and large square brackets around a sum.
+
+\section{Equations and Alignment}
+\textbf{Definition.} Displayed equations appear on separate lines. An alignment environment lines up related equations at a chosen point, commonly the equals sign.
+\textbf{Source code:}
+\begin{verbatim}
+\begin{align*}
+x + 2 &= 5 \\
+x &= 5 - 2 \\
+x &= 3
+\end{align*}
+\end{verbatim}
+\textbf{Expected result:}
+\begin{align*}
+x + 2 &= 5 \\
+x &= 5 - 2 \\
+x &= 3
+\end{align*}
+\textbf{Commands.} The \verb|align*| environment (from the \verb|amsmath| package) aligns multiple lines without numbering them. The ampersand \verb|&| marks the alignment point, and \verb|\\| starts a new row. Add \verb|\usepackage{amsmath}| to the document preamble.
+\textbf{Practice.} Show the steps for solving $y+4=9$, aligning each equals sign.
+
+\section{Matrices}
+\textbf{Definition.} A matrix is a rectangular arrangement of entries in rows and columns.
+\textbf{Source code:}
+\begin{verbatim}
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\]
+\end{verbatim}
+\textbf{Expected result:}
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\]
+\textbf{Commands.} The \verb|bmatrix| environment creates a matrix with square brackets. Use \verb|&| to separate columns and \verb|\\| to start a new row. It is provided by the \verb|amsmath| package.
+\textbf{Practice.} Create a matrix with two rows and three columns containing the numbers 1 to 6.
+\end{document}
