@@ -19,19 +19,19 @@ This module introduces the tools and techniques used to organize and customize t
 - Understanding the purpose of document classes such as `article`, `report`, and `book`
 - Selecting font sizes and paper dimensions
 - Adding document titles, author details, and dates
-- Generating a title section with `\\maketitle`
+- Generating a title section with `\maketitle`
 - Creating an abstract
 - Arranging content with sections and subsections
 
 ### 2. Page Layout and Formatting
 
-- Applying page styles with `\\pagestyle`
+- Applying page styles with `\pagestyle`
 - Using built-in styles: `plain`, `empty`, and `headings`
 - Changing page dimensions and margins with `geometry`
 - Designing custom headers and footers using `fancyhdr`
 - Adjusting paragraph indentation and spacing
 - Adding horizontal and vertical gaps
-- Controlling page flow with `\\newpage` and `\\pagebreak`
+- Controlling page flow with `\newpage` and `\pagebreak`
 
 ### 3. Personalizing Document Appearance
 
@@ -42,19 +42,19 @@ This module introduces the tools and techniques used to organize and customize t
 
 ### 4. Text Boxes and Position Control
 
-- Keeping text together using `\\mbox`
+- Keeping text together using `\mbox`
 - Preventing page breaks with the `samepage` environment
-- Placing text inside fixed-width blocks using `\\parbox`
-- Adjusting the vertical position of content with `\\raisebox`
+- Placing text inside fixed-width blocks using `\parbox`
+- Adjusting the vertical position of content with `\raisebox`
 - Managing manual line breaks
 
 ### 5. Managing References with BibTeX
 
 - Preparing a separate `.bib` bibliography file
 - Understanding common BibTeX entry types
-- Citing sources with `\\cite`
-- Selecting a bibliography format with `\\bibliographystyle`
-- Displaying references using `\\bibliography`
+- Citing sources with `\cite`
+- Selecting a bibliography format with `\bibliographystyle`
+- Displaying references using `\bibliography`
 
 ## 🧰 LaTeX Packages Used
 
