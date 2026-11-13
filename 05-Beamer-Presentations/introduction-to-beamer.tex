@@ -1,0 +1,243 @@
+\documentclass[11pt,aspectratio=43]{beamer}
+
+% A simple academic Beamer layout with a fresh teal-and-gold palette.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\definecolor{Teal}{RGB}{0,112,105}
+\definecolor{DeepTeal}{RGB}{8,67,68}
+\definecolor{Gold}{RGB}{214,157,56}
+\definecolor{SoftTeal}{RGB}{231,244,242}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[circle]
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=Teal}
+\setbeamercolor{frametitle}{fg=white,bg=Teal}
+\setbeamercolor{title}{fg=white,bg=Teal}
+\setbeamercolor{item}{fg=Gold}
+\setbeamercolor{subitem}{fg=Teal}
+\setbeamercolor{footline}{fg=white,bg=DeepTeal}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+
+% Wide colored title band, matching the reference slide layout.
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.7ex,dp=1.1ex,leftskip=0.35cm,rightskip=0.25cm]{frametitle}%
+    \insertframetitle\strut%
+  \end{beamercolorbox}%
+}
+
+% Compact three-part footer with author/ID, deck title, and slide count.
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.38\paperwidth,ht=2.6ex,dp=1.1ex,leftskip=.25cm]{footline}%
+      \scriptsize Sagar Jaiswal  |  2025UCP1944
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.40\paperwidth,ht=2.6ex,dp=1.1ex,center]{footline}%
+      \scriptsize Introduction to Beamer
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.22\paperwidth,ht=2.6ex,dp=1.1ex,rightskip=.25cm plus1fil]{footline}%
+      \scriptsize \insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\title{Introduction to Beamer}
+\author{Sagar Jaiswal}
+\institute{ID: 2025UCP1944}
+\date{\today}
+
+\begin{document}
+
+% Slide 1: Title slide - centered title panel and presenter details.
+\begin{frame}
+  \vspace{1.35cm}
+  \begin{center}
+  \begin{beamercolorbox}[wd=.92\textwidth,rounded=true,shadow=true,sep=1.0em,center]{title}
+    {\usebeamerfont{title}\inserttitle}
+  \end{beamercolorbox}
+  \end{center}
+  \vspace{0.65cm}
+  \begin{center}
+    {\Large \insertauthor}\par
+    \vspace{0.28cm}
+    {\normalsize \insertinstitute}\par
+    \vspace{0.45cm}
+    {\normalsize \insertdate}
+  \end{center}
+\end{frame}
+
+% Slide 2: Introduction
+\begin{frame}{Introduction}
+  \vspace{0.55cm}
+  \textbf{What is Beamer?}
+  \begin{itemize}
+    \item Beamer is a LaTeX document class used to create presentations.
+    \item It allows us to create structured slides.
+    \item It supports equations, tables, figures and more.
+  \end{itemize}
+\end{frame}
+
+% Slide 3: Document and page styles
+\begin{frame}{Document and Page Styles}
+  \vspace{0.22cm}
+  \textbf{Document Class}
+  \begin{itemize}
+    \item Defines the overall structure of a document.
+    \item Examples:
+    \begin{itemize}
+      \item article
+      \item report
+      \item book
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{0.18cm}
+  \textbf{Page Style}
+  \begin{itemize}
+    \item Controls the appearance of headers and footers.
+    \item Examples: plain, empty, headings and fancy.
+  \end{itemize}
+\end{frame}
+
+% Slide 4: Mathematical equations
+\begin{frame}{Mathematical Equations}
+  \vspace{0.35cm}
+  Beamer also supports mathematical expressions.
+
+  \begin{center}
+    \vspace{0.15cm}
+    \[
+      E = mc^2
+    \]
+    \vspace{0.08cm}
+    \[
+      \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+    \]
+  \end{center}
+
+  \vspace{0.05cm}
+  \textbf{Advantages}
+  \begin{itemize}
+    \item Mathematical expressions are easy to format.
+    \item Equations can be displayed clearly on slides.
+  \end{itemize}
+\end{frame}
+
+
+% Additional slide: Blocks and emphasis
+\begin{frame}{Using Blocks to Highlight Information}
+  Beamer provides blocks that separate key information from the rest of the slide.
+  \vspace{0.15cm}
+  \begin{block}{Regular Block}
+    Use this style for definitions, explanations, or important notes.
+  \end{block}
+  \begin{alertblock}{Important Notice}
+    Use an alert block sparingly when a point needs special attention.
+  \end{alertblock}
+  \begin{exampleblock}{Example}
+    A short example helps connect a concept with a practical use.
+  \end{exampleblock}
+\end{frame}
+
+% Additional slide: Columns
+\begin{frame}{Arranging Content in Columns}
+  Columns place related material side by side instead of in one long list.
+  \vspace{0.18cm}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Text and Lists}
+        \begin{itemize}
+          \item Explain an idea.
+          \item Give supporting points.
+          \item Keep each point concise.
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Examples and Visuals}
+        \begin{itemize}
+          \item Show a small table.
+          \item Add a diagram.
+          \item Include an equation.
+        \end{itemize}
+      \end{block}
+  \end{columns}
+  \vspace{0.10cm}
+  \small Use columns when two pieces of information are easier to understand together.
+\end{frame}
+
+% Additional slide: Overlays
+\begin{frame}{Revealing Content Step by Step}
+  Overlays let a presenter reveal selected items gradually instead of showing everything at once.
+  \vspace{0.12cm}
+  \begin{block}{A list with step-by-step appearance}
+    \begin{itemize}
+      \item<1-> First, introduce the main idea.
+      \item<2-> Next, explain a supporting detail.
+      \item<3-> Finally, show the conclusion.
+    \end{itemize}
+  \end{block}
+  \textbf{Useful overlay commands}
+  \begin{itemize}
+    \item \texttt{\textbackslash pause} pauses before showing the next content.
+    \item \texttt{\textbackslash only<2->\{...\}} displays material from overlay 2 onward.
+    \item \texttt{\textbackslash visible<2->\{...\}} reserves space before material appears.
+  \end{itemize}
+\end{frame}
+
+% Additional slide: Themes
+\begin{frame}{Themes and Visual Customization}
+  Beamer themes control the overall appearance of a presentation, including colors, navigation elements, and slide headings.
+  \vspace{0.12cm}
+  \begin{block}{Selecting a theme}
+    \small
+    \texttt{\textbackslash usetheme\{Madrid\}}\par
+    \texttt{\textbackslash usecolortheme\{seahorse\}}
+  \end{block}
+  \textbf{Design suggestions}
+  \begin{itemize}
+    \item Choose a theme that suits the purpose of the presentation.
+    \item Use a small set of matching colors.
+    \item Keep headings and body text visually distinct.
+    \item Avoid putting too much information on one slide.
+  \end{itemize}
+\end{frame}
+
+% Additional slide: Presentation tips
+\begin{frame}{Tips for an Effective Presentation}
+  A good slide deck supports the speaker rather than replacing the speaker.
+  \vspace{0.12cm}
+  \begin{itemize}
+    \item \textbf{Keep slides focused:} present one main idea on each slide.
+    \item \textbf{Use readable text:} choose font sizes visible from a distance.
+    \item \textbf{Prefer concise points:} explain details verbally instead of filling slides with paragraphs.
+    \item \textbf{Use visuals carefully:} add diagrams, tables, or images when they clarify the topic.
+    \item \textbf{Check consistency:} keep colors, headings, and spacing uniform.
+    \item \textbf{Rehearse:} practise moving through the slides before presenting.
+  \end{itemize}
+\end{frame}
+
+% Slide 5: Conclusion
+\begin{frame}{Conclusion}
+  \begin{center}
+    \vspace{0.2cm}
+    {\LARGE\bfseries Thank You!}\par
+    \vspace{0.35cm}
+    {\large Questions?}
+  \end{center}
+
+  \vspace{0.45cm}
+  \textbf{Key Takeaways}
+  \begin{itemize}
+    \item Beamer is used to create presentations using LaTeX.
+    \item Each slide is created using the frame environment.
+    \item We can include text, equations, tables and figures.
+  \end{itemize}
+\end{frame}
+
+\end{document}
